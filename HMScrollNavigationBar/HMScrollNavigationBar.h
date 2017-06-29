@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HMScrollViewDelegateProxy.h"
+#import "UIScrollView+DelegateProxy.h"
+
 //! Project version number for HMScrollNavigationBar.
 FOUNDATION_EXPORT double HMScrollNavigationBarVersionNumber;
 

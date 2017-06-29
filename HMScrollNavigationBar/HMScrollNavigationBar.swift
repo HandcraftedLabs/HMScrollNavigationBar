@@ -9,28 +9,6 @@
 import Foundation
 import UIKit
 
-private var HMNavigationBarAnimatorAssociationKey: UInt8 = 0
-
-//MARK: UIViewController extension
-
-public extension UIViewController {
-    var navigationBarAnimator: HMNavigationBarAnimator! {
-        get {
-            var navigationBarAnimator = objc_getAssociatedObject(self, &HMNavigationBarAnimatorAssociationKey) as? HMNavigationBarAnimator
-            if(navigationBarAnimator == nil) {
-                navigationBarAnimator = NavigationBarAnimator()
-                navigationBarAnimator?.view = self.view
-                self.navigationBarAnimator = navigationBarAnimator
-            }
-            return navigationBarAnimator!
-        }
-        set(newValue) {
-            objc_setAssociatedObject(self, &HMNavigationBarAnimatorAssociationKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN)
-        }
-    }
-}
-
-
 //MARK: Protocols
 
 public protocol HMNavigationBarAnimator: NSObjectProtocol {
@@ -65,7 +43,7 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
         self.scrollView = scrollView
         self.navBar = navBar
         self.navBarHeight = (self.navBar?.frame.height)!
-        self.scrollView?.delegate = self
+        self.scrollView?.secondaryDelegate = self
         
         self.observer = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIDeviceOrientationDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] _ in
             UIView.animate(withDuration: 0.0, animations: {

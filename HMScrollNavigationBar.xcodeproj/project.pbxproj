@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F934CE8E1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */; };
+		F934CE901F04D53000F6CEF1 /* HMScrollViewDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F934CE921F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */; };
+		F934CE941F04D80300F6CEF1 /* UIScrollView+DelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F934CE931F04D7E600F6CEF1 /* UIScrollView+DelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F934CE961F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F934CE951F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift */; };
 		F9F7838F1E794768008EB45B /* HMScrollNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = F9F7838D1E794768008EB45B /* HMScrollNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9F783961E79480E008EB45B /* HMScrollNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F783951E79480E008EB45B /* HMScrollNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMScrollViewDelegateProxy.m; sourceTree = "<group>"; };
+		F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMScrollViewDelegateProxy.h; sourceTree = "<group>"; };
+		F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DelegateProxy.m"; sourceTree = "<group>"; };
+		F934CE931F04D7E600F6CEF1 /* UIScrollView+DelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DelegateProxy.h"; sourceTree = "<group>"; };
+		F934CE951F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavBarAnimator.swift"; sourceTree = "<group>"; };
 		F9F7838A1E794768008EB45B /* HMScrollNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMScrollNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F7838D1E794768008EB45B /* HMScrollNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMScrollNavigationBar.h; sourceTree = "<group>"; };
 		F9F7838E1E794768008EB45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,7 +60,12 @@
 			children = (
 				F9F7838D1E794768008EB45B /* HMScrollNavigationBar.h */,
 				F9F783951E79480E008EB45B /* HMScrollNavigationBar.swift */,
+				F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */,
+				F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */,
 				F9F7838E1E794768008EB45B /* Info.plist */,
+				F934CE931F04D7E600F6CEF1 /* UIScrollView+DelegateProxy.h */,
+				F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */,
+				F934CE951F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift */,
 			);
 			path = HMScrollNavigationBar;
 			sourceTree = "<group>";
@@ -62,7 +77,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F934CE941F04D80300F6CEF1 /* UIScrollView+DelegateProxy.h in Headers */,
 				F9F7838F1E794768008EB45B /* HMScrollNavigationBar.h in Headers */,
+				F934CE901F04D53000F6CEF1 /* HMScrollViewDelegateProxy.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +115,7 @@
 				TargetAttributes = {
 					F9F783891E794768008EB45B = {
 						CreatedOnToolsVersion = 8.2.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -136,6 +153,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F783961E79480E008EB45B /* HMScrollNavigationBar.swift in Sources */,
+				F934CE961F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift in Sources */,
+				F934CE8E1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m in Sources */,
+				F934CE921F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +319,7 @@
 				F9F783941E794768008EB45B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
