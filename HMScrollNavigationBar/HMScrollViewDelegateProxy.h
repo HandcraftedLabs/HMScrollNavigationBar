@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface HMScrollViewDelegateProxy : NSProxy
+@interface HMScrollViewDelegateProxy : NSProxy<UIScrollViewDelegate>
 
 @property (nonatomic, weak) id<UIScrollViewDelegate> primaryDelegate;
 @property (nonatomic, weak) id<UIScrollViewDelegate> secondaryDelegate;
