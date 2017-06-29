@@ -34,9 +34,12 @@ HMScrollNavigationBar is available through [Carthage](https://github.com/Carthag
 
 2. Setup your navigationBarAnimator.
 
+**Note that primary delegate for UITableView, must be set before setup of the NavigationBarAnimator!**
+
 ![CodeExample!!](resources/code_example.png)
 
 3. Sit back and run your application.
+
 
 ## Contributors
 
