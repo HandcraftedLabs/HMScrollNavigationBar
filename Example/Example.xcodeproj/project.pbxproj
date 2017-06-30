@@ -13,6 +13,7 @@
 		F9A8F9571F04C5B000CE6792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A8F9561F04C5B000CE6792 /* Assets.xcassets */; };
 		F9A8F95A1F04C5B000CE6792 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A8F9581F04C5B000CE6792 /* LaunchScreen.storyboard */; };
 		F9A8F9671F04C74300CE6792 /* HMScrollNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A8F9661F04C5D800CE6792 /* HMScrollNavigationBar.framework */; };
+		F9BC0F861F066501005BD48B /* HMScrollNavigationBar.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = F9A8F9661F04C5D800CE6792 /* HMScrollNavigationBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +25,19 @@
 			remoteInfo = HMScrollNavigationBar;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F9BC0F851F0664EF005BD48B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F9BC0F861F066501005BD48B /* HMScrollNavigationBar.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F9A8F94C1F04C5B000CE6792 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +110,7 @@
 				F9A8F9481F04C5B000CE6792 /* Sources */,
 				F9A8F9491F04C5B000CE6792 /* Frameworks */,
 				F9A8F94A1F04C5B000CE6792 /* Resources */,
+				F9BC0F851F0664EF005BD48B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -118,6 +133,7 @@
 				TargetAttributes = {
 					F9A8F94B1F04C5B000CE6792 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = E8K9RXC4H6;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -298,12 +314,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = E8K9RXC4H6;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hmscrollnavigationbar.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "5d43795f-d00c-4733-92ef-0d5b061cc33c";
+				PROVISIONING_PROFILE_SPECIFIER = "CF Development Profile For Any Aplication";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;

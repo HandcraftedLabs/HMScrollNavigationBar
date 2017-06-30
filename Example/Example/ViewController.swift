@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         // Primary delegate must be set before setup on navigationBarAnimator !
         self.tableView.delegate = self
         self.navigationBarAnimator.setup(scrollView: self.tableView, navBar: self.navBar)
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
