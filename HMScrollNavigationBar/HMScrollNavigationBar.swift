@@ -30,6 +30,7 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
     var navBarHeight: CGFloat = 0
     var lastScrollingOffsetY: CGFloat = 0
     var startDraggingOffsetY: CGFloat = 0
+    var lastScrollingOffsetDelta: CGFloat = 0
     
     weak var scrollView: UIScrollView?
     weak var navBar : UIView?
@@ -40,7 +41,7 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
     private var observer: Any?
     
     fileprivate var navBarFullyVisible: Bool { return self.navBar!.frame.height == self.navBarHeight }
-    fileprivate var navBarHidden: Bool { return self.navBar!.frame.height <= 0 }
+    fileprivate var navBarHidden: Bool { return self.navBar!.frame.height <= self.statusBarHeight }
     
     public func setup(scrollView: UIScrollView, navBar: UIView) {
         self.scrollView = scrollView
@@ -59,13 +60,13 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
     
     open func animate(navBarHeight: CGFloat, scrollViewHeight: CGFloat, navBarAlpha: CGFloat? = nil) {
         print("ANIMATION \(navBarHeight) , \(scrollViewHeight) , \(navBarAlpha)")
-        DispatchQueue.main.async { [weak self] in
-//            UIView.animate(withDuration: self.animationDuration, animations: { [weak self] in
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: self.animationDuration, animations: { [weak self] in
                 self?.navBar?.frame = CGRect(x: 0, y: 0, width: (self?.view?.frame.width)!, height: navBarHeight)
-                self?.navBar?.alpha = navBarAlpha != nil ? navBarAlpha! : navBarHeight / (self?.navBarHeight)!
+//                self?.navBar?.alpha = navBarAlpha != nil ? navBarAlpha! : navBarHeight / (self?.navBarHeight)!
                 self?.scrollView?.frame = CGRect(x: 0, y: scrollViewHeight, width: (self?.view?.frame.width)!, height: (self?.view?.frame.height)! - scrollViewHeight)
                 print("NAVBAR AFTER ANIMATION \(self?.navBar?.frame.height)")
-//            })
+            })
         }
 
     }
@@ -75,7 +76,7 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
     }
     
     internal func hideNavBar() {
-        self.animate(navBarHeight: 0, scrollViewHeight: self.statusBarHeight, navBarAlpha: 0)
+        self.animate(navBarHeight: self.statusBarHeight, scrollViewHeight: self.statusBarHeight, navBarAlpha: 1)
     }
     
     deinit {
@@ -155,16 +156,18 @@ extension NavigationBarAnimator: UIScrollViewDelegate {
         print("**************************")
         print("lastScrollingOffset \(self.lastScrollingOffsetY)")
         print("scrollViewOffsetY \(scrollView.contentOffset.y) // scrollHeight \(scrollView.frame.height)")
+        print("scrollViewInsetTop \(scrollView.contentInset.top) / scrollViewInsetBott \(scrollView.contentInset.bottom)")
         print("offsetDelta \(offsetDelta)")
         print("bouncesTop \(bouncesTop) /\\ bouncesBottom \(bouncesBottom)")
         print(" ")
         
+        
         var scrollingHeight = self.navBar!.frame.height + offsetDelta
-        if (!self.navBarHidden && offsetDelta < 0) {
+        if (!self.navBarHidden && offsetDelta < 0 && self.lastScrollingOffsetDelta < 0 && !bouncesTop) {
             print("Here will be hiding")
             let scrollViewHeight = scrollingHeight > self.statusBarHeight ? scrollingHeight : self.statusBarHeight
-            self.animate(navBarHeight: scrollingHeight, scrollViewHeight: scrollViewHeight)
-        } else if !self.navBarFullyVisible && offsetDelta > 0 {
+            self.animate(navBarHeight: scrollViewHeight, scrollViewHeight: scrollViewHeight)
+        } else if (!self.navBarFullyVisible && offsetDelta > 0 && !bouncesBottom) {
             print("Here will be showing /\\ navFullVisible \(self.navBarFullyVisible)")
             scrollingHeight = min(scrollingHeight, self.navBarHeight)
             let scrollViewHeight = max(scrollingHeight, self.statusBarHeight)
@@ -173,6 +176,7 @@ extension NavigationBarAnimator: UIScrollViewDelegate {
         
         print(" ")
         
+        self.lastScrollingOffsetDelta = offsetDelta
         self.lastScrollingOffsetY = scrollView.contentOffset.y
     }
     
