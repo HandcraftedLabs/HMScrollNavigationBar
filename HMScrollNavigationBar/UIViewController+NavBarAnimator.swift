@@ -16,8 +16,7 @@ public extension UIViewController {
         get {
             var navigationBarAnimator = objc_getAssociatedObject(self, &HMNavigationBarAnimatorAssociationKey) as? HMNavigationBarAnimator
             if(navigationBarAnimator == nil) {
-                navigationBarAnimator = NavigationBarAnimator()
-                navigationBarAnimator?.view = self.view
+                navigationBarAnimator = NavigationBarAnimator(superView: self.view)
                 self.navigationBarAnimator = navigationBarAnimator
             }
             return navigationBarAnimator!
