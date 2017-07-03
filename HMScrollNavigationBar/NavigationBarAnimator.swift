@@ -48,7 +48,6 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
     }
     
     open func moveNavBar(animationEnabled: Bool = false, scrollViewHeight: CGFloat, navBarAlpha: CGFloat? = nil) {
-        print("scrollViewHeight \(scrollViewHeight)")
         let animationBlock = {
             self.navBar!.frame = CGRect(x: 0, y: 0, width: self.superView!.frame.width, height: scrollViewHeight)
             self.navBar!.subviews.flatMap { subViews in
