@@ -18,16 +18,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMScrollViewDelegateProxy.m; sourceTree = "<group>"; };
-		F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMScrollViewDelegateProxy.h; sourceTree = "<group>"; };
-		F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DelegateProxy.m"; sourceTree = "<group>"; };
-		F934CE931F04D7E600F6CEF1 /* UIScrollView+DelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DelegateProxy.h"; sourceTree = "<group>"; };
-		F934CE951F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavBarAnimator.swift"; sourceTree = "<group>"; };
-		F99C756B1F0A64CC00C736F4 /* NavigationBarAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarAnimator.swift; sourceTree = "<group>"; };
+		F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HMScrollViewDelegateProxy.m; path = HMScrollViewDelegateProxy.m; sourceTree = "<group>"; };
+		F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HMScrollViewDelegateProxy.h; path = HMScrollViewDelegateProxy.h; sourceTree = "<group>"; };
+		F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+DelegateProxy.m"; path = "UIScrollView+DelegateProxy.m"; sourceTree = "<group>"; };
+		F934CE931F04D7E600F6CEF1 /* UIScrollView+DelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+DelegateProxy.h"; path = "UIScrollView+DelegateProxy.h"; sourceTree = "<group>"; };
+		F934CE951F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+NavBarAnimator.swift"; path = "UIViewController+NavBarAnimator.swift"; sourceTree = "<group>"; };
+		F99C756B1F0A64CC00C736F4 /* NavigationBarAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarAnimator.swift; path = NavigationBarAnimator.swift; sourceTree = "<group>"; };
 		F9F7838A1E794768008EB45B /* HMScrollNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMScrollNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F7838D1E794768008EB45B /* HMScrollNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMScrollNavigationBar.h; sourceTree = "<group>"; };
 		F9F7838E1E794768008EB45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9F783951E79480E008EB45B /* HMScrollNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMScrollNavigationBar.swift; sourceTree = "<group>"; };
+		F9F783951E79480E008EB45B /* HMScrollNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HMScrollNavigationBar.swift; path = HMScrollNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,34 +41,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F99C756D1F0A651E00C736F4 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				F9F783951E79480E008EB45B /* HMScrollNavigationBar.swift */,
-				F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */,
-				F934CE931F04D7E600F6CEF1 /* UIScrollView+DelegateProxy.h */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		F99C756E1F0A652700C736F4 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */,
-				F934CE951F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		F99C756F1F0A652B00C736F4 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */,
-				F99C756B1F0A64CC00C736F4 /* NavigationBarAnimator.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		F9F783801E794768008EB45B = {
 			isa = PBXGroup;
 			children = (
@@ -88,11 +60,15 @@
 		F9F7838C1E794768008EB45B /* HMScrollNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
-				F99C756F1F0A652B00C736F4 /* Classes */,
-				F99C756E1F0A652700C736F4 /* Extensions */,
-				F99C756D1F0A651E00C736F4 /* Protocols */,
 				F9F7838D1E794768008EB45B /* HMScrollNavigationBar.h */,
+				F9F783951E79480E008EB45B /* HMScrollNavigationBar.swift */,
+				F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */,
+				F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */,
 				F9F7838E1E794768008EB45B /* Info.plist */,
+				F99C756B1F0A64CC00C736F4 /* NavigationBarAnimator.swift */,
+				F934CE931F04D7E600F6CEF1 /* UIScrollView+DelegateProxy.h */,
+				F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */,
+				F934CE951F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift */,
 			);
 			path = HMScrollNavigationBar;
 			sourceTree = "<group>";
@@ -298,7 +274,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Protocols";
 				INFOPLIST_FILE = HMScrollNavigationBar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -319,7 +294,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Protocols";
 				INFOPLIST_FILE = HMScrollNavigationBar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
