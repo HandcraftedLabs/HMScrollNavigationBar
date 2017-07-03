@@ -48,7 +48,6 @@
 				F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */,
 				F934CE931F04D7E600F6CEF1 /* UIScrollView+DelegateProxy.h */,
 			);
-			name = Protocols;
 			path = Protocols;
 			sourceTree = "<group>";
 		};
@@ -58,7 +57,6 @@
 				F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */,
 				F934CE951F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -68,7 +66,6 @@
 				F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */,
 				F99C756B1F0A64CC00C736F4 /* NavigationBarAnimator.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -301,6 +298,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Protocols";
 				INFOPLIST_FILE = HMScrollNavigationBar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -321,6 +319,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Protocols";
 				INFOPLIST_FILE = HMScrollNavigationBar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
