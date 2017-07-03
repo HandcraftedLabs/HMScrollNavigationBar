@@ -24,9 +24,6 @@ public protocol HMNavigationBarAnimator: NSObjectProtocol {
     /// Animation duration of hiding/showing navBar
     var animationDuration: TimeInterval { get set }
     
-    /// A Boolean value indicating whether the navBar should become transparent while hiding
-    var transparencyEnabled: Bool { get set }
-    
     /**
         Setup method of HMNavigationBarAnimator
         
@@ -55,10 +52,9 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
     public weak var scrollView: UIScrollView?
     public weak var navBar : UIView?
     public var animationDuration: TimeInterval = 0.2
-    public var transparencyEnabled: Bool = false
     
     private var application: UIApplication = UIApplication.shared
-    private var observer: Any?
+    private var observers: [Any] = []
     
     fileprivate lazy var statusBarHeight: CGFloat = self.application.statusBarFrame.size.height
     fileprivate weak var superView: UIView?
@@ -82,23 +78,37 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
         self.navBarHeight = self.navBar!.frame.height
         self.scrollView?.secondaryDelegate = self
         
-        self.observer = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIDeviceOrientationDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] _ in
+        let orientationObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIDeviceOrientationDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] _ in
             UIView.animate(withDuration: 0.0, animations: {
                 guard let `self` = self else { return }
                 self.navBar!.frame = CGRect(x: 0, y: 0, width: self.superView!.frame.width, height: self.navBar!.frame.height)
                 self.navBar!.alpha = self.navBar!.frame.height / self.navBarHeight
             })
         })
+        self.observers.append(orientationObserver)
+        
+        let applicationEnterForegroundObserver = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: OperationQueue.main, using: { _ in
+            
+//            guard let `self` = self else { return }
+            DispatchQueue.main.async {
+                self.navBar?.alpha = 1
+                self.superView?.setNeedsDisplay()
+            }
+
+        })
+        
+        self.observers.append(applicationEnterForegroundObserver)
     }
     
     open func moveNavBar(animationEnabled: Bool = false, scrollViewHeight: CGFloat, navBarAlpha: CGFloat? = nil) {
-        
+        print("scrollViewHeight \(scrollViewHeight)")
         let animationBlock = {
             self.navBar!.frame = CGRect(x: 0, y: 0, width: self.superView!.frame.width, height: scrollViewHeight)
-            if self.transparencyEnabled {
-                self.navBar!.alpha = navBarAlpha != nil ? navBarAlpha! : scrollViewHeight / self.navBarHeight
+            self.navBar!.subviews.flatMap { subViews in
+                return subViews.subviews
+                }.forEach {
+                    $0.alpha = navBarAlpha != nil ? navBarAlpha! : scrollViewHeight / self.navBarHeight
             }
-            
             self.scrollView!.frame = CGRect(x: 0, y: scrollViewHeight, width: self.superView!.frame.width, height: self.superView!.frame.height)
             self.scrollView!.contentInset = UIEdgeInsetsMake(0, 0, scrollViewHeight, 0)
         }
@@ -116,15 +126,16 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
     }
     
     internal func showNavBar() {
-        self.moveNavBar(animationEnabled: true, scrollViewHeight: self.navBarHeight)
+        self.moveNavBar(animationEnabled: true, scrollViewHeight: self.navBarHeight, navBarAlpha: 1)
     }
     
     internal func hideNavBar() {
-        self.moveNavBar(animationEnabled: true, scrollViewHeight: self.statusBarHeight, navBarAlpha: 1)
+        self.moveNavBar(animationEnabled: true, scrollViewHeight: self.statusBarHeight, navBarAlpha: 0)
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self.observer!)
+//        NotificationCenter.default.removeObserver(self.observer!)
+        self.observers.forEach { NotificationCenter.default.removeObserver($0) }
     }
 }
 
@@ -146,7 +157,7 @@ extension NavigationBarAnimator: UIScrollViewDelegate {
             let scrollViewHeight = scrollingHeight > self.statusBarHeight ? scrollingHeight : self.statusBarHeight
             self.moveNavBar(scrollViewHeight: scrollViewHeight)
         } else if (!self.navBarFullyVisible && offsetDelta > 0 && !bouncesBottom) {
-            if(self.startDraggingOffsetY == 0 || scrollView.contentOffset.y < self.startDraggingOffsetY - 250 || scrollView.contentOffset.y < 0) {
+            if(self.startDraggingOffsetY == 0 || scrollView.contentOffset.y < self.startDraggingOffsetY - 150 || scrollView.contentOffset.y < 0) {
                 scrollingHeight = min(scrollingHeight, self.navBarHeight)
                 let scrollViewHeight = max(scrollingHeight, self.statusBarHeight)
                 self.moveNavBar(scrollViewHeight: scrollViewHeight)
@@ -167,9 +178,9 @@ extension NavigationBarAnimator: UIScrollViewDelegate {
         let offsetStart = -scrollView.contentInset.top
         
         if(!decelerate || scrollView.contentOffset.y > offsetEnd || scrollView.contentOffset.y < offsetStart) {
-            if self.navBar!.frame.height < self.navBarHeight {
+            if self.navBar!.frame.height < self.navBarHeight && self.navBar!.frame.height != self.statusBarHeight {
                 self.hideNavBar()
-            } else {
+            } else if self.navBar!.frame.height > (self.navBarHeight*0.99) {
                 self.showNavBar()
             }
         }
