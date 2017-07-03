@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/HandcraftedMobile/HMScrollNavigationBar.git", :tag => "1.3" }
 
   s.source_files  = "HMScrollNavigationBar"
+  s.header_dir = "Protocols"
   s.requires_arc = true
 
 end
