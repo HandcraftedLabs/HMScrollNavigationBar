@@ -14,6 +14,8 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
     public weak var scrollView: UIScrollView?
     public weak var navBar : UIView?
     public var animationDuration: TimeInterval = 0.2
+    public var hideNavbarFirst: Bool = true
+    
     
     private var application: UIApplication = UIApplication.shared
     private var observer: Any?
@@ -71,6 +73,7 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
         }
     }
     
+    
     internal func showNavBar() {
         self.moveNavBar(animationEnabled: true, scrollViewHeight: self.navBarHeight, navBarAlpha: 1)
     }
@@ -95,6 +98,14 @@ extension NavigationBarAnimator: UIScrollViewDelegate {
         
         if offsetDelta == 0 && self.lastScrollingOffsetY < contentOffsetEnd && self.navBar!.frame.height <= self.navBarHeight {
             offsetDelta = min(0.5, -self.lastScrollingOffsetY)
+        }
+        
+        if self.hideNavbarFirst && !self.navBarHidden && offsetDelta < 0 && !bouncesTop {
+            var scrollBounds = scrollView.bounds
+            var contentOffset = scrollView.contentOffset
+            contentOffset.y = 0
+            scrollBounds.origin = contentOffset
+            scrollView.bounds = scrollBounds
         }
         
         var scrollingHeight = self.navBar!.frame.height + offsetDelta

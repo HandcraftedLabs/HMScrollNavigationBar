@@ -21,6 +21,9 @@ public protocol HMNavigationBarAnimator: NSObjectProtocol {
     /// Animation duration of hiding/showing navBar
     var animationDuration: TimeInterval { get set }
     
+    /// A Boolean value that indicates if navbar should hide before scroll content
+    var hideNavbarFirst: Bool { get set }
+    
     /**
         Setup method of HMNavigationBarAnimator
         
