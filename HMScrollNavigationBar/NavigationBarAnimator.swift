@@ -101,11 +101,13 @@ extension NavigationBarAnimator: UIScrollViewDelegate {
         }
         
         if self.hideNavbarFirst && !self.navBarHidden && offsetDelta < 0 && !bouncesTop {
-            var scrollBounds = scrollView.bounds
-            var contentOffset = scrollView.contentOffset
-            contentOffset.y = 0
-            scrollBounds.origin = contentOffset
-            scrollView.bounds = scrollBounds
+            if scrollView.contentOffset.y + offsetDelta == 0 {
+                var scrollBounds = scrollView.bounds
+                var contentOffset = scrollView.contentOffset
+                contentOffset.y = 0
+                scrollBounds.origin = contentOffset
+                scrollView.bounds = scrollBounds
+            }
         }
         
         var scrollingHeight = self.navBar!.frame.height + offsetDelta
