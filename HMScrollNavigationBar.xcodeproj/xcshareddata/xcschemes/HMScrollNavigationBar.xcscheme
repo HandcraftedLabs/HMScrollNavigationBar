@@ -20,6 +20,20 @@
                ReferencedContainer = "container:HMScrollNavigationBar.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F9274CF71F0F90AA007EB146"
+               BuildableName = "HMScrollNavigationBarTests.xctest"
+               BlueprintName = "HMScrollNavigationBarTests"
+               ReferencedContainer = "container:HMScrollNavigationBar.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,7 +42,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F9274CF71F0F90AA007EB146"
+               BuildableName = "HMScrollNavigationBarTests.xctest"
+               BlueprintName = "HMScrollNavigationBarTests"
+               ReferencedContainer = "container:HMScrollNavigationBar.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F9F783891E794768008EB45B"
+            BuildableName = "HMScrollNavigationBar.framework"
+            BlueprintName = "HMScrollNavigationBar"
+            ReferencedContainer = "container:HMScrollNavigationBar.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

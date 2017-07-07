@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A140EE6D5391F24CA2E79787 /* Pods_HMScrollNavigationBarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71CFCFAE857FA4742A56F0A4 /* Pods_HMScrollNavigationBarTests.framework */; };
+		F9274CFD1F0F90AA007EB146 /* HMScrollNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F7838A1E794768008EB45B /* HMScrollNavigationBar.framework */; };
+		F9274D041F0FABC5007EB146 /* UIViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9274D031F0FABC5007EB146 /* UIViewControllerSpec.swift */; };
+		F9274D061F0FAD09007EB146 /* NavigationBarAnimatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9274D051F0FAD09007EB146 /* NavigationBarAnimatorSpec.swift */; };
+		F9274D081F0FAD32007EB146 /* HMScrollViewDelegateProxySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9274D071F0FAD32007EB146 /* HMScrollViewDelegateProxySpec.swift */; };
+		F9274D0A1F0FAD5E007EB146 /* UIScrollViewExtensionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9274D091F0FAD5E007EB146 /* UIScrollViewExtensionSpec.swift */; };
 		F934CE8E1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */; };
 		F934CE901F04D53000F6CEF1 /* HMScrollViewDelegateProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F934CE921F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */; };
@@ -15,37 +21,105 @@
 		F99C756C1F0A64CC00C736F4 /* NavigationBarAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99C756B1F0A64CC00C736F4 /* NavigationBarAnimator.swift */; };
 		F9F7838F1E794768008EB45B /* HMScrollNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = F9F7838D1E794768008EB45B /* HMScrollNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F9F783961E79480E008EB45B /* HMScrollNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F783951E79480E008EB45B /* HMScrollNavigationBar.swift */; };
+		FB9CEB0223450C81957FCC29 /* Pods_HMScrollNavigationBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97147693729326906DDC7930 /* Pods_HMScrollNavigationBar.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F9274CFE1F0F90AA007EB146 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9F783811E794768008EB45B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9F783891E794768008EB45B;
+			remoteInfo = HMScrollNavigationBar;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HMScrollViewDelegateProxy.m; path = HMScrollViewDelegateProxy.m; sourceTree = "<group>"; };
-		F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HMScrollViewDelegateProxy.h; path = HMScrollViewDelegateProxy.h; sourceTree = "<group>"; };
-		F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+DelegateProxy.m"; path = "UIScrollView+DelegateProxy.m"; sourceTree = "<group>"; };
-		F934CE931F04D7E600F6CEF1 /* UIScrollView+DelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+DelegateProxy.h"; path = "UIScrollView+DelegateProxy.h"; sourceTree = "<group>"; };
-		F934CE951F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+NavBarAnimator.swift"; path = "UIViewController+NavBarAnimator.swift"; sourceTree = "<group>"; };
-		F99C756B1F0A64CC00C736F4 /* NavigationBarAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationBarAnimator.swift; path = NavigationBarAnimator.swift; sourceTree = "<group>"; };
+		18CBC4B82B8932B935CDFB97 /* Pods-HMScrollNavigationBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMScrollNavigationBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-HMScrollNavigationBar/Pods-HMScrollNavigationBar.release.xcconfig"; sourceTree = "<group>"; };
+		41574DBD851A143D1ED51E76 /* Pods-HMScrollNavigationBarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMScrollNavigationBarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HMScrollNavigationBarTests/Pods-HMScrollNavigationBarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		71CFCFAE857FA4742A56F0A4 /* Pods_HMScrollNavigationBarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HMScrollNavigationBarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		794A2CAC4C80E5EB386717D7 /* Pods-HMScrollNavigationBarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMScrollNavigationBarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HMScrollNavigationBarTests/Pods-HMScrollNavigationBarTests.release.xcconfig"; sourceTree = "<group>"; };
+		97147693729326906DDC7930 /* Pods_HMScrollNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HMScrollNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C83F5589BB758ACD3EB89211 /* Pods-HMScrollNavigationBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HMScrollNavigationBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HMScrollNavigationBar/Pods-HMScrollNavigationBar.debug.xcconfig"; sourceTree = "<group>"; };
+		F9274CF81F0F90AA007EB146 /* HMScrollNavigationBarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HMScrollNavigationBarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9274CFC1F0F90AA007EB146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9274D031F0FABC5007EB146 /* UIViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerSpec.swift; sourceTree = "<group>"; };
+		F9274D051F0FAD09007EB146 /* NavigationBarAnimatorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarAnimatorSpec.swift; sourceTree = "<group>"; };
+		F9274D071F0FAD32007EB146 /* HMScrollViewDelegateProxySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMScrollViewDelegateProxySpec.swift; sourceTree = "<group>"; };
+		F9274D091F0FAD5E007EB146 /* UIScrollViewExtensionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtensionSpec.swift; sourceTree = "<group>"; };
+		F934CE8D1F04D1E200F6CEF1 /* HMScrollViewDelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMScrollViewDelegateProxy.m; sourceTree = "<group>"; };
+		F934CE8F1F04D21A00F6CEF1 /* HMScrollViewDelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMScrollViewDelegateProxy.h; sourceTree = "<group>"; };
+		F934CE911F04D6FA00F6CEF1 /* UIScrollView+DelegateProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+DelegateProxy.m"; sourceTree = "<group>"; };
+		F934CE931F04D7E600F6CEF1 /* UIScrollView+DelegateProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+DelegateProxy.h"; sourceTree = "<group>"; };
+		F934CE951F04DC2000F6CEF1 /* UIViewController+NavBarAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavBarAnimator.swift"; sourceTree = "<group>"; };
+		F99C756B1F0A64CC00C736F4 /* NavigationBarAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarAnimator.swift; sourceTree = "<group>"; };
 		F9F7838A1E794768008EB45B /* HMScrollNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HMScrollNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F7838D1E794768008EB45B /* HMScrollNavigationBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMScrollNavigationBar.h; sourceTree = "<group>"; };
 		F9F7838E1E794768008EB45B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9F783951E79480E008EB45B /* HMScrollNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HMScrollNavigationBar.swift; path = HMScrollNavigationBar.swift; sourceTree = "<group>"; };
+		F9F783951E79480E008EB45B /* HMScrollNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMScrollNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F9274CF51F0F90AA007EB146 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9274CFD1F0F90AA007EB146 /* HMScrollNavigationBar.framework in Frameworks */,
+				A140EE6D5391F24CA2E79787 /* Pods_HMScrollNavigationBarTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9F783861E794768008EB45B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB9CEB0223450C81957FCC29 /* Pods_HMScrollNavigationBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36FB054C4B915DB56217D873 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C83F5589BB758ACD3EB89211 /* Pods-HMScrollNavigationBar.debug.xcconfig */,
+				18CBC4B82B8932B935CDFB97 /* Pods-HMScrollNavigationBar.release.xcconfig */,
+				41574DBD851A143D1ED51E76 /* Pods-HMScrollNavigationBarTests.debug.xcconfig */,
+				794A2CAC4C80E5EB386717D7 /* Pods-HMScrollNavigationBarTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		664D3E69B2B76996864FE85F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97147693729326906DDC7930 /* Pods_HMScrollNavigationBar.framework */,
+				71CFCFAE857FA4742A56F0A4 /* Pods_HMScrollNavigationBarTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9274CF91F0F90AA007EB146 /* HMScrollNavigationBarTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9274CFC1F0F90AA007EB146 /* Info.plist */,
+				F9274D031F0FABC5007EB146 /* UIViewControllerSpec.swift */,
+				F9274D051F0FAD09007EB146 /* NavigationBarAnimatorSpec.swift */,
+				F9274D071F0FAD32007EB146 /* HMScrollViewDelegateProxySpec.swift */,
+				F9274D091F0FAD5E007EB146 /* UIScrollViewExtensionSpec.swift */,
+			);
+			path = HMScrollNavigationBarTests;
+			sourceTree = "<group>";
+		};
 		F9F783801E794768008EB45B = {
 			isa = PBXGroup;
 			children = (
 				F9F7838C1E794768008EB45B /* HMScrollNavigationBar */,
+				F9274CF91F0F90AA007EB146 /* HMScrollNavigationBarTests */,
 				F9F7838B1E794768008EB45B /* Products */,
+				36FB054C4B915DB56217D873 /* Pods */,
+				664D3E69B2B76996864FE85F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				F9F7838A1E794768008EB45B /* HMScrollNavigationBar.framework */,
+				F9274CF81F0F90AA007EB146 /* HMScrollNavigationBarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,14 +164,37 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		F9274CF71F0F90AA007EB146 /* HMScrollNavigationBarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9274D001F0F90AA007EB146 /* Build configuration list for PBXNativeTarget "HMScrollNavigationBarTests" */;
+			buildPhases = (
+				B4E0DD7B17B31A755DA53973 /* [CP] Check Pods Manifest.lock */,
+				F9274CF41F0F90AA007EB146 /* Sources */,
+				F9274CF51F0F90AA007EB146 /* Frameworks */,
+				F9274CF61F0F90AA007EB146 /* Resources */,
+				0883B4D56EF47091B1BFFDFC /* [CP] Embed Pods Frameworks */,
+				01A9F211B08851EA6A0C164B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9274CFF1F0F90AA007EB146 /* PBXTargetDependency */,
+			);
+			name = HMScrollNavigationBarTests;
+			productName = HMScrollNavigationBarTests;
+			productReference = F9274CF81F0F90AA007EB146 /* HMScrollNavigationBarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F9F783891E794768008EB45B /* HMScrollNavigationBar */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9F783921E794768008EB45B /* Build configuration list for PBXNativeTarget "HMScrollNavigationBar" */;
 			buildPhases = (
+				C80971C43BD5EB6B32B77377 /* [CP] Check Pods Manifest.lock */,
 				F9F783851E794768008EB45B /* Sources */,
 				F9F783861E794768008EB45B /* Frameworks */,
 				F9F783871E794768008EB45B /* Headers */,
 				F9F783881E794768008EB45B /* Resources */,
+				4893E015D8AA50AFE6690DC3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -113,9 +211,14 @@
 		F9F783811E794768008EB45B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Handcrafted Mobile Sp. z o.o.";
 				TargetAttributes = {
+					F9274CF71F0F90AA007EB146 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					F9F783891E794768008EB45B = {
 						CreatedOnToolsVersion = 8.2.1;
 						LastSwiftMigration = 0900;
@@ -136,11 +239,19 @@
 			projectRoot = "";
 			targets = (
 				F9F783891E794768008EB45B /* HMScrollNavigationBar */,
+				F9274CF71F0F90AA007EB146 /* HMScrollNavigationBarTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F9274CF61F0F90AA007EB146 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9F783881E794768008EB45B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,7 +261,96 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01A9F211B08851EA6A0C164B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HMScrollNavigationBarTests/Pods-HMScrollNavigationBarTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0883B4D56EF47091B1BFFDFC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HMScrollNavigationBarTests/Pods-HMScrollNavigationBarTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4893E015D8AA50AFE6690DC3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HMScrollNavigationBar/Pods-HMScrollNavigationBar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4E0DD7B17B31A755DA53973 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C80971C43BD5EB6B32B77377 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		F9274CF41F0F90AA007EB146 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9274D081F0FAD32007EB146 /* HMScrollViewDelegateProxySpec.swift in Sources */,
+				F9274D061F0FAD09007EB146 /* NavigationBarAnimatorSpec.swift in Sources */,
+				F9274D041F0FABC5007EB146 /* UIViewControllerSpec.swift in Sources */,
+				F9274D0A1F0FAD5E007EB146 /* UIScrollViewExtensionSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F9F783851E794768008EB45B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,7 +365,43 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F9274CFF1F0F90AA007EB146 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9F783891E794768008EB45B /* HMScrollNavigationBar */;
+			targetProxy = F9274CFE1F0F90AA007EB146 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F9274D011F0F90AA007EB146 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41574DBD851A143D1ED51E76 /* Pods-HMScrollNavigationBarTests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = HMScrollNavigationBarTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hmscrollnavigationbar.HMScrollNavigationBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F9274D021F0F90AA007EB146 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 794A2CAC4C80E5EB386717D7 /* Pods-HMScrollNavigationBarTests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				INFOPLIST_FILE = HMScrollNavigationBarTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hmscrollnavigationbar.HMScrollNavigationBarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		F9F783901E794768008EB45B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -267,6 +503,7 @@
 		};
 		F9F783931E794768008EB45B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C83F5589BB758ACD3EB89211 /* Pods-HMScrollNavigationBar.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -287,6 +524,7 @@
 		};
 		F9F783941E794768008EB45B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18CBC4B82B8932B935CDFB97 /* Pods-HMScrollNavigationBar.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -307,6 +545,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F9274D001F0F90AA007EB146 /* Build configuration list for PBXNativeTarget "HMScrollNavigationBarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9274D011F0F90AA007EB146 /* Debug */,
+				F9274D021F0F90AA007EB146 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F9F783841E794768008EB45B /* Build configuration list for PBXProject "HMScrollNavigationBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
