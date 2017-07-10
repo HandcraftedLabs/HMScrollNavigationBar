@@ -24,6 +24,9 @@ public protocol HMNavigationBarAnimator: NSObjectProtocol {
     /// A Boolean value that indicates if navbar should hide before scroll content
     var hideNavbarFirst: Bool { get set }
     
+    /// Height of status bar
+    var statusBarHeight: CGFloat { get set }
+    
     /**
         Setup method of HMNavigationBarAnimator
         

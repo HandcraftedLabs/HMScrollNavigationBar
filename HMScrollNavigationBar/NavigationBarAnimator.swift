@@ -15,12 +15,12 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
     public weak var navBar : UIView?
     public var animationDuration: TimeInterval = 0.2
     public var hideNavbarFirst: Bool = true
-    
+    public lazy var statusBarHeight: CGFloat = self.application.statusBarFrame.size.height
     
     private var application: UIApplication = UIApplication.shared
     private var observer: Any?
     
-    fileprivate lazy var statusBarHeight: CGFloat = self.application.statusBarFrame.size.height
+    
     fileprivate weak var superView: UIView?
     fileprivate var navBarFullyVisible: Bool { return self.navBar!.frame.height == self.navBarHeight }
     fileprivate var navBarHidden: Bool { return self.navBar!.frame.height <= self.statusBarHeight }
@@ -82,6 +82,15 @@ open class NavigationBarAnimator: NSObject, HMNavigationBarAnimator {
         self.moveNavBar(animationEnabled: true, scrollViewHeight: self.statusBarHeight, navBarAlpha: 0)
     }
     
+    fileprivate func resetContentOffsetHeight(of scrollView: UIScrollView, to height: CGFloat) {
+        var scrollBounds = scrollView.bounds
+        var contentOffset = scrollView.contentOffset
+        contentOffset.y = height
+        scrollBounds.origin = contentOffset
+        scrollView.bounds = scrollBounds
+    }
+    
+    
     deinit {
         NotificationCenter.default.removeObserver(self.observer!)
     }
@@ -102,20 +111,16 @@ extension NavigationBarAnimator: UIScrollViewDelegate {
         
         if self.hideNavbarFirst && !self.navBarHidden && offsetDelta < 0 && !bouncesTop {
             if scrollView.contentOffset.y + offsetDelta == 0 {
-                var scrollBounds = scrollView.bounds
-                var contentOffset = scrollView.contentOffset
-                contentOffset.y = 0
-                scrollBounds.origin = contentOffset
-                scrollView.bounds = scrollBounds
+                self.resetContentOffsetHeight(of: scrollView, to: 0)
             }
         }
         
         var scrollingHeight = self.navBar!.frame.height + offsetDelta
-        if (!self.navBarHidden && offsetDelta < 0 && self.lastScrollingOffsetDelta < 0 && !bouncesTop) {
+        if (!self.navBarHidden && offsetDelta < 0 && self.lastScrollingOffsetDelta < 0 && !bouncesTop) { // Hide navbar
             let scrollViewHeight = scrollingHeight > self.statusBarHeight ? scrollingHeight : self.statusBarHeight
             self.moveNavBar(scrollViewHeight: scrollViewHeight)
-        } else if (!self.navBarFullyVisible && offsetDelta > 0 && !bouncesBottom) {
-            if(self.startDraggingOffsetY == 0 || scrollView.contentOffset.y < self.startDraggingOffsetY - 150 || scrollView.contentOffset.y < 0) {
+        } else if (!self.navBarFullyVisible && offsetDelta > 0 && !bouncesBottom) { // Show navbar
+            if(self.startDraggingOffsetY == 0 || scrollView.contentOffset.y < self.startDraggingOffsetY - 150 || scrollView.contentOffset.y < 0 ) {
                 scrollingHeight = min(scrollingHeight, self.navBarHeight)
                 let scrollViewHeight = max(scrollingHeight, self.statusBarHeight)
                 self.moveNavBar(scrollViewHeight: scrollViewHeight)

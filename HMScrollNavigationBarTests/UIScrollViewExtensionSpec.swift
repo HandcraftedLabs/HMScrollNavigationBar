@@ -20,29 +20,38 @@ class UIScrollViewExtensionSpec: QuickSpec {
     
     override func spec() {
         
-        describe("UIScrollView with delegate proxy extension") {
+        describe("UIScrollViewExtensionSpec") {
+            let scrollView: UIScrollView = UIScrollView()
             
-            let scrollView = UIScrollView()
-            let firstDelegate = ScrollViewDelegateMock()
-            let secondDelegate = ScrollViewDelegateMock()
             
-            scrollView.delegate = firstDelegate
-            
-            it("scrollview delegate should be of firstDelegate type") {
-                expect(scrollView.delegate).to(beAKindOf(ScrollViewDelegateMock.self))
-                expect(scrollView.delegate).to(be(firstDelegate))
+            context("UIScrollView with one delegate") {
+                var firstDelegate: UIScrollViewDelegate!
+                
+                beforeEach {
+                    firstDelegate = ScrollViewDelegateMock()
+                    scrollView.delegate = firstDelegate
+                }
+                
+                it("scrollview delegate should be of firstDelegate type") {
+                    expect(scrollView.delegate).to(beAKindOf(ScrollViewDelegateMock.self))
+                    expect(scrollView.delegate).to(be(firstDelegate))
+                }
             }
             
-            scrollView.secondaryDelegate = secondDelegate
-            
-            it("scrollView delegate should be now proxy") {
-                expect(scrollView.delegate!).to(beAKindOf(HMScrollViewDelegateProxy.self))
+            context("UIScrollView with two delegates") {
+                var firstDelegate: UIScrollViewDelegate!
+                var secondDelegate: UIScrollViewDelegate!
                 
-                let delegateProxy = scrollView.delegate! as! HMScrollViewDelegateProxy
+                beforeEach {
+                    firstDelegate = ScrollViewDelegateMock()
+                    secondDelegate = ScrollViewDelegateMock()
+                    scrollView.delegate = firstDelegate
+                    scrollView.secondaryDelegate = secondDelegate
+                }
                 
-                expect(delegateProxy).toNot(beNil())
-                expect(delegateProxy.primaryDelegate).to(be(firstDelegate))
-                expect(delegateProxy.secondaryDelegate).to(be(secondDelegate))
+                it("should have delegate proxy") {
+                    expect(scrollView.delegate!).to(beAnInstanceOf(HMScrollViewDelegateProxy.self))
+                }
             }
         }
     }
