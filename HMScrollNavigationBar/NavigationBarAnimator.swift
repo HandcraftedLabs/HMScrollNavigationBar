@@ -100,6 +100,7 @@ extension NavigationBarAnimator: UIScrollViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let bouncesTop = scrollView.contentOffset.y < 0
+        let lastBouncesTop = self.lastScrollingOffsetY < 0
         let contentOffsetEnd = floor(scrollView.contentSize.height - scrollView.bounds.height + scrollView.contentInset.bottom - 0.5)
         let bouncesBottom = scrollView.contentOffset.y > contentOffsetEnd
         
@@ -116,9 +117,11 @@ extension NavigationBarAnimator: UIScrollViewDelegate {
         }
         
         var scrollingHeight = self.navBar!.frame.height + offsetDelta
-        if (!self.navBarHidden && offsetDelta < 0 && self.lastScrollingOffsetDelta < 0 && !bouncesTop) { // Hide navbar
-            let scrollViewHeight = scrollingHeight > self.statusBarHeight ? scrollingHeight : self.statusBarHeight
-            self.moveNavBar(scrollViewHeight: scrollViewHeight)
+        if (!self.navBarHidden && offsetDelta < 0 && self.lastScrollingOffsetDelta < 0 && !bouncesTop && !lastBouncesTop) { // Hide navbar
+            if scrollView.isDecelerating || scrollView.isTracking {
+                let scrollViewHeight = scrollingHeight > self.statusBarHeight ? scrollingHeight : self.statusBarHeight
+                self.moveNavBar(scrollViewHeight: scrollViewHeight)
+            }
         } else if (!self.navBarFullyVisible && offsetDelta > 0 && !bouncesBottom) { // Show navbar
             if(self.startDraggingOffsetY == 0 || scrollView.contentOffset.y < self.startDraggingOffsetY - 150 || scrollView.contentOffset.y < 0 ) {
                 scrollingHeight = min(scrollingHeight, self.navBarHeight)
@@ -144,10 +147,27 @@ extension NavigationBarAnimator: UIScrollViewDelegate {
             if self.navBar!.frame.height < self.navBarHeight && self.navBar!.frame.height != self.statusBarHeight {
                 self.hideNavBar()
             } else if self.navBar!.frame.height > (self.navBarHeight*0.99) {
-                self.showNavBar()
+                if #available(iOS 10.0, *) {
+                    if let refreshControl = scrollView.refreshControl {
+                        if !refreshControl.isRefreshing {
+                            self.showNavBar()
+                        }
+                    } else {
+                        self.showNavBar()
+                    }
+                } else {
+                    // Fallback on earlier versions
+                    self.showNavBar()
+                }
             }
         }
         self.startDraggingOffsetY = 0
+    }
+    
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if self.navBar!.bounds.height != self.statusBarHeight && self.navBar!.bounds.height != self.navBarHeight {
+            self.hideNavBar()
+        }
     }
     
 }

@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navBar: UIView!
     
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
@@ -21,8 +23,14 @@ class ViewController: UIViewController {
         // Primary delegate must be set before setup on navigationBarAnimator !
         self.tableView.delegate = self
         self.navigationBarAnimator.setup(scrollView: self.tableView, navBar: self.navBar)
+
+        self.tableView.refreshControl = refreshControl
+        
     }
 
+    @IBAction func testButtonaction(_ sender: Any) {
+        self.refreshControl.endRefreshing()
+    }
 }
 
 extension ViewController: UITableViewDataSource {
